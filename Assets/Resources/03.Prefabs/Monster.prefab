@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5544532452658242176}
   - component: {fileID: 6337781061695107031}
   - component: {fileID: 6048583650242033753}
+  - component: {fileID: 4014949822940036663}
   m_Layer: 6
   m_Name: Monster
   m_TagString: Monster
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1778958328749304040}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -98,6 +99,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4014949822940036663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778958328749304040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94123c1e26f626e46b8204ec0e305aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPrefab: {fileID: 8774573901023659939, guid: 99e8f09b4223c794daa78b1ed6f060ef, type: 3}
+  dropTables:
+  - itemData: {fileID: 11400000, guid: 7e4896b6f6a5ecd4993c1e6ae6e04892, type: 2}
+    dropRate: 0.4
+    minCount: 1
+    maxCount: 1
+  - itemData: {fileID: 11400000, guid: 6a228c576fbb04447a94e1d1bd3e213a, type: 2}
+    dropRate: 0.2
+    minCount: 1
+    maxCount: 1
+  - itemData: {fileID: 11400000, guid: 349ec1d1086d0214588be2a44d495a09, type: 2}
+    dropRate: 0.2
+    minCount: 1
+    maxCount: 1
 --- !u!1001 &2275372928046118594
 PrefabInstance:
   m_ObjectHideFlags: 0

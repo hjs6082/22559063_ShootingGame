@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public int maxHp = 5;
     public int maxWave = 5;
+    public int Hp => hp;
 
     [SerializeField] private GameObject characterPrefab;
     [SerializeField] private Transform characterSpawnPoint;
@@ -39,6 +40,9 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int amount = 1)
     {
+        if (PlayerStatus.Instance != null && PlayerStatus.Instance.IsScoreDouble)
+            amount *= 2;
+
         score += amount;
         int best = PlayerPrefs.GetInt("bestscore", 0);
         if (score > best)

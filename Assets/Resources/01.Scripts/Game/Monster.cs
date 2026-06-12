@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(MonsterDropper))]
 public class Monster : MonoBehaviour
 {
     public float spd = 1.0f;
@@ -9,12 +10,15 @@ public class Monster : MonoBehaviour
 
     public GameObject prefabsExplosion;
 
+    MonsterDropper monsterDropper;
+
     private void Start()
     {
+        monsterDropper = GetComponent<MonsterDropper>();
         target = GameObject.FindWithTag("Player");
         if (target != null) playerFlash = target.GetComponent<ColoredFlash>();
         int rndNum = Random.Range(0, 10);
-        if (rndNum % 3 == 0)
+        if (0 == rndNum % 3)
         {
             direct = target.transform.position - transform.position;
             direct.Normalize();
@@ -28,7 +32,7 @@ public class Monster : MonoBehaviour
 
     void TryDropItem()
     {
-        MonsterManager.Instance.TryDropItem(transform.position);
+        monsterDropper.Drop();
     }
 
     ColoredFlash playerFlash;
